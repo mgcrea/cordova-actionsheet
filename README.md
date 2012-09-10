@@ -3,59 +3,52 @@ by [Olivier Louvignes](http://olouv.com)
 
 ## DESCRIPTION ##
 
-* This is a generic seed to build a post 2.1.0 Cordova ARC plugin.
+* This plugin provides a simple way to use the `UIActionSheet` native component from iOS. This plugin is built for Cordova >= v2.1.0 with ARC.
+
+* There is a `Sencha Touch 2.0` plugin to easily leverage this plugin [here](https://github.com/mgcrea/sencha-touch-plugins/blob/master/CordovaActionSheet.js)
+
+## SAMPLE PROJECT GENERATION ##
+
+You can generate a sample XCode project by running `samples/ios/create.sh` from the root of the repository.
 
 ## PLUGIN SETUP FOR IOS ##
 
 Using this plugin requires [Cordova iOS](https://github.com/apache/incubator-cordova-ios).
 
 1. Make sure your Xcode project has been [updated for Cordova](https://github.com/apache/incubator-cordova-ios/blob/master/guides/Cordova%20Upgrade%20Guide.md)
-2. Rename the `src/ios` folder to `MyPlugin`, drag and drop it from Finder to your Plugins folder in XCode, using "Create groups for any added folders"
+2. Rename the `src/ios` folder to `ActionSheet`, drag and drop it from Finder to your Plugins folder in XCode, using "Create groups for any added folders"
 3. Add the .js files to your `www` folder on disk, and add reference(s) to the .js files using `<script>` tags in your html file(s)
 
 
-    `<script type="text/javascript" src="/js/plugins/MyPlugin.js"></script>`
+    `<script type="text/javascript" src="/js/plugins/ActionSheet.js"></script>`
 
 
-4. Add new entry with key `MyPlugin` and value `MyPlugin` to `Plugins` in `Cordova.plist/Cordova.plist`
-
-## PLUGIN SETUP FOR ANDROID ##
-
-Using this plugin requires [Cordova Android](https://github.com/apache/incubator-cordova-android).
-
-1. Make sure your Android project has been [updated for Cordova](https://github.com/apache/incubator-cordova-android/blob/master/guides/Cordova%20Upgrade%20Guide.md)
-2. Merge both the `libs` and `src` folder from this plugin to your projet.
-3. Add the .js files to your `assets/www` folder on disk, and add reference(s) to the .js files using `<script>` tags in your html file(s)
-
-
-    `<script type="text/javascript" src="/js/plugins/FacebookConnect.js"></script>`
-
-
-4. Add new entry with key `MyPlugin` and value `org.apache.cordova.plugins.MyPlugin` to `Plugins` in `res/xml/config.xml`
-
-
-    <plugin name="MyPlugin" value="org.apache.cordova.plugins.MyPlugin"/>
-
+4. Add new entry with key `ActionSheet` and value `ActionSheet` to `Plugins` in `Cordova.plist/Cordova.plist`
 
 ## JAVASCRIPT INTERFACE (IOS/ANDROID) ##
 
     // After device ready, create a local alias
-    var myPlugin = window.plugins.myPlugin;
+    var actionSheet = window.plugins.actionSheet;
 
-    // MyMethod
-    messageBox.myMethod('Title', 'Message', function() {
-        console.log("MyPlugin.myMethod:" + JSON.stringify(arguments));
+    // Basic with title
+    actionSheet.create('Title', ['Foo', 'Bar'], function(buttonValue, buttonIndex) {
+        console.warn('create(), arguments=' + Array.prototype.slice.call(arguments).join(', '));
     });
 
-* Check [source](https://github.com/mgcrea/cordova-plugin-seed/tree/master/www/MyPlugin.js) for additional configuration.
+    // Complex
+    actionSheet.create(null, ['Add', 'Delete', 'Cancel'], function(buttonValue, buttonIndex) {
+        console.warn('create(), arguments=' + Array.prototype.slice.call(arguments).join(', '));
+    }, {destructiveButtonIndex: 1, cancelButtonIndex: 2});
+
+* Check [source](https://github.com/mgcrea/cordova-actionsheet/tree/master/www/ActionSheet.js) for additional configuration.
 
 ## BUGS AND CONTRIBUTIONS ##
 
 Patches welcome! Send a pull request. Since this is not a part of Cordova Core (which requires a CLA), this should be easier.
 
-Post issues on [Github](https://github.com/mgcrea/cordova-plugin-seed/issues)
+Post issues on [Github](https://github.com/mgcrea/cordova-actionsheet/issues)
 
-The latest code (my fork) will always be [here](https://github.com/mgcrea/cordova-plugin-seed/tree/master)
+The latest code (my fork) will always be [here](https://github.com/mgcrea/cordova-actionsheet/tree/master)
 
 ## LICENSE ##
 
@@ -85,5 +78,5 @@ The latest code (my fork) will always be [here](https://github.com/mgcrea/cordov
 
 Contributors :
 
-* [Olivier Louvignes](http://olouv.com)
+* [Olivier Louvignes](http://olouv.com), author.
 

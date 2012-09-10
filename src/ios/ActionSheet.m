@@ -67,15 +67,15 @@
 	// Checking if cancel was clicked
 	if (buttonIndex != actionSheet.cancelButtonIndex) {
 		//Call  the Failure Javascript function
-		[self writeJavascript: [pluginResult toErrorCallbackString:self.callbackID]];
+		[self writeJavascript: [pluginResult toErrorCallbackString:self.callbackId]];
 	// Checking if destructive was clicked
 	} else if (buttonIndex != actionSheet.destructiveButtonIndex) {
 		//Call  the Success Javascript function
-		[self writeJavascript: [pluginResult toSuccessCallbackString:self.callbackID]];
+		[self writeJavascript: [pluginResult toSuccessCallbackString:self.callbackId]];
 	// Other button was clicked
 	} else {
 		//Call  the Success Javascript function
-		[self writeJavascript: [pluginResult toSuccessCallbackString:self.callbackID]];
+		[self writeJavascript: [pluginResult toSuccessCallbackString:self.callbackId]];
 	}
 
 }

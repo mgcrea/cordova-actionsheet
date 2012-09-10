@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
 
-@interface MyPlugin : CDVPlugin {
+@interface ActionSheet : CDVPlugin <UIActionSheetDelegate> {
 }
 
 #pragma mark - Properties

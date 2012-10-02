@@ -1,4 +1,4 @@
-# Cordova Plugin Seed #
+# Cordova ActionSheet Plugin #
 by [Olivier Louvignes](http://olouv.com)
 
 ## DESCRIPTION ##

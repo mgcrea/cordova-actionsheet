@@ -3,5 +3,4 @@ build/
 xcuserdata
 .DS_Store
 samples/ios/ActionSheet
-cordova/**
 !.gitignore

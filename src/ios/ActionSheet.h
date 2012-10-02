@@ -1,7 +1,8 @@
 //
 //  ActionSheet.h
 //
-// Created by Olivier Louvignes on 2011-11-27.
+// Created by Olivier Louvignes on 2011-11-27
+// Updated on 2012-08-04 for Cordova ARC-2.1+
 //
 // Copyright 2011-2012 Olivier Louvignes. All rights reserved.
 // MIT Licensed
@@ -21,12 +22,3 @@
 - (void)create:(CDVInvokedUrlCommand*)command;
 
 @end
-
-#pragma mark - Logging tools
-
-#ifdef DEBUG
-#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-#else
-#   define DLog(...)
-#endif
-#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);

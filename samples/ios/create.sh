@@ -10,7 +10,7 @@ fi;
 
 path=samples/ios/$pluginName;
 rm -rf $path
-cordova/cordova-ios/bin/create $path org.apache.cordova.plugins.$pluginName $pluginName
+cordova/cordova-ios/bin/create --shared $path org.apache.cordova.plugins.$pluginName $pluginName
 
 cp www/*.js $path/www/js;
 cp samples/ios/www/*.js $path/www/js;

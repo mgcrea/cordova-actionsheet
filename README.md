@@ -3,20 +3,22 @@ by [Olivier Louvignes](http://olouv.com)
 
 ## DESCRIPTION ##
 
-* This plugin provides a simple way to use the `UIActionSheet` native component from iOS. This plugin is built for Cordova >= v2.1.0 with ARC.
+* This plugin provides a simple way to use the `UIActionSheet` native component from iOS.
+
+* This plugin is built for Cordova >= v2.1.0 with ARC.
 
 * There is a `Sencha Touch 2.0` plugin to easily leverage this plugin [here](https://github.com/mgcrea/sencha-touch-plugins/blob/master/CordovaActionSheet.js)
 
 ## SAMPLE PROJECT GENERATION ##
 
-You can generate a sample XCode project by running `samples/ios/create.sh` from the root of the repository.
+You can generate a sample XCode project by running `samples/ios/create.sh` from the root of the repository. You will have to manually add the `ActionSheet` folder to Xcode (see step 2).
 
 ## PLUGIN SETUP FOR IOS ##
 
 Using this plugin requires [Cordova iOS](https://github.com/apache/incubator-cordova-ios).
 
 1. Make sure your Xcode project has been [updated for Cordova](https://github.com/apache/incubator-cordova-ios/blob/master/guides/Cordova%20Upgrade%20Guide.md)
-2. Rename the `src/ios` folder to `ActionSheet`, drag and drop it from Finder to your Plugins folder in XCode, using "Create groups for any added folders"
+2. Drag and drop the `src/ios` folder from the Finder to your `Plugins` folder in XCode, using "Create groups for any added folders", rename the folder to `ActionSheet`.
 3. Add the .js files to your `www` folder on disk, and add reference(s) to the .js files using `<script>` tags in your html file(s)
 
 

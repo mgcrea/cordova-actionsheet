@@ -10,13 +10,13 @@
 
 	function ActionSheet() {}
 
-	ActionSheet.prototype.create = function(title, items, callback, options) {
+	ActionSheet.prototype.create = function(options, callback) {
 		options || (options = {});
 		var scope = options.scope || null;
 
 		var config = {
-			title : title || '',
-			items : items || ['Cancel'],
+			title : options.title || '',
+			items : options.items || ['Cancel'],
 			style : options.style || 'default',
 			destructiveButtonIndex : options.hasOwnProperty('destructiveButtonIndex') ? options.destructiveButtonIndex : undefined,
 			cancelButtonIndex : options.hasOwnProperty('cancelButtonIndex') ? options.cancelButtonIndex : undefined

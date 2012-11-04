@@ -9,6 +9,8 @@ by [Olivier Louvignes](http://olouv.com)
 
 * There is a `Sencha Touch 2.0` plugin to easily leverage this plugin [here](https://github.com/mgcrea/sencha-touch-plugins/blob/master/CordovaActionSheet.js)
 
+[![Screenshot](https://raw.github.com/mgcrea/cordova-actionsheet/master/samples/ios/sample.png)](https://github.com/mgcrea/cordova-actionsheet/tree/master)
+
 ## SAMPLE PROJECT GENERATION ##
 
 You can generate a sample XCode project by running `samples/ios/create.sh` from the root of the repository. You will have to manually add the `ActionSheet` folder to Xcode (see step 2).
@@ -33,14 +35,14 @@ Using this plugin requires [Cordova iOS](https://github.com/apache/incubator-cor
     var actionSheet = window.plugins.actionSheet;
 
     // Basic with title
-    actionSheet.create('Title', ['Foo', 'Bar'], function(buttonValue, buttonIndex) {
+    actionSheet.create({title: 'Title', items: ['Foo', 'Bar']}, function(buttonValue, buttonIndex) {
         console.warn('create(), arguments=' + Array.prototype.slice.call(arguments).join(', '));
     });
 
     // Complex
-    actionSheet.create(null, ['Add', 'Delete', 'Cancel'], function(buttonValue, buttonIndex) {
+    actionSheet.create({items: ['Add', 'Delete', 'Cancel'], destructiveButtonIndex: 1, cancelButtonIndex: 2}, function(buttonValue, buttonIndex) {
         console.warn('create(), arguments=' + Array.prototype.slice.call(arguments).join(', '));
-    }, {destructiveButtonIndex: 1, cancelButtonIndex: 2});
+    });
 
 * Check [source](https://github.com/mgcrea/cordova-actionsheet/tree/master/www/ActionSheet.js) for additional configuration.
 
